@@ -1,0 +1,45 @@
+--// Services
+local Players           = cloneref(game:GetService('Players'))
+local ReplicatedStorage = cloneref(game:GetService('ReplicatedStorage'))
+local RunService        = cloneref(game:GetService('RunService'))
+local GuiService        = cloneref(game:GetService('GuiService'))
+
+--// Variables
+local flags     = {}
+local lp        = Players.LocalPlayer
+local Locations = {
+    ['LightGame'] = CFrame.new(156.494583, 3.50012469, 709.877563, -0.999958873, -2.64355471e-08, 0.00907192379, -2.72906195e-08, 1, -9.41310816e-08, -0.00907192379, -9.43747906e-08, -0.999958873)
+}
+
+--// Functions
+FindChildOfClass = function(parent, classname)
+    return parent:FindFirstChildOfClass(classname)
+end
+FindChild = function(parent, child)
+    return parent:FindFirstChild(child)
+end
+FindChildOfType = function(parent, childname, classname)
+    child = parent:FindFirstChild(childname)
+    if child and child.ClassName == classname then
+        return child
+    end
+end
+CheckFunc = function(func)
+    return typeof(func) == 'function'
+end
+
+--// Custom Functions
+getchar = function()
+    return lp.Character or lp.CharacterAdded:Wait()
+end
+gethrp = function()
+    return getchar():WaitForChild('HumanoidRootPart')
+end
+gethum = function()
+    return getchar():WaitForChild('Humanoid')
+end
+
+--// UI
+local library = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local LightGame = library:CreateWindow('Light Game')
+LightGame:Button('Teleport To Finish', function() gethrp().CFrame = Locations['LightGame'] end)
