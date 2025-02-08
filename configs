@@ -4,7 +4,7 @@ local originalid    = marketservice:GetProductInfo(7606564092).Creator.CreatorTa
 local gamename      = marketservice:GetProductInfo(game.PlaceId).Name
 
 local games = {
-    [16732694052] = 'https://github.com/xataxell/azure-hub/blob/main/Games/Fisch?raw=true',
+    [16732694052] = 'https://raw.githubusercontent.com/vitorhub543/JV-WARE.hub/refs/heads/main/README.md',
     [originalid]  = 'https://github.com/xataxell/azure-hub/blob/main/Games/Shrimp%20Game?raw=true',
 }
 
