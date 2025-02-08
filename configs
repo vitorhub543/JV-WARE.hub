@@ -5,7 +5,7 @@ local gamename      = marketservice:GetProductInfo(game.PlaceId).Name
 
 local games = {
     [16732694052] = 'https://raw.githubusercontent.com/vitorhub543/JV-WARE.hub/refs/heads/main/README.md',
-    [originalid]  = 'https://github.com/xataxell/azure-hub/blob/main/Games/Shrimp%20Game?raw=true',
+    [originalid]  = 'https://raw.githubusercontent.com/vitorhub543/JV-WARE.hub/refs/heads/main/2',
 }
 
 if games[id] then
